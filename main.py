@@ -71,7 +71,9 @@ def coffee_order():
     for key in resources.keys():
         print(key, ":", resources[key])
 
-    coffee_type = input("What would you like? (espresso/latte/cappuccino):\n").lower()
+    coffee_type = input("What would you like? (espresso/latte/cappuccino/off):\n").lower()
+    if coffee_type == "off":
+        exit()
 
     # TODO: 2. ask user to insert coins (quarters, dimes, nickles, pennies)
     resource_check = coffee_resource_check(coffee_type)
@@ -98,6 +100,7 @@ def coffee_order():
         coffee_order()
     else:
         print("Turning off the Machine")
+        exit()
 
 
 # TODO 4. print here os your coffe name
